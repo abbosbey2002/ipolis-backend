@@ -71,20 +71,20 @@ class ApiOsagoController extends Controller
     //
     public function createOrder(Request $request)
     {
-            $req = $request->json()->all();
-            $policy_id = $req['policy_id'];
-            $data = json_encode($req['data']);
+        $req = $request->json()->all();
+        $policy_id = $req['policy_id'];
+        $data = json_encode($req['data']);
 
-       $orders = [
-    'product_id' => 'osago',
-    'amount' => 400,
-    'state' => 2,
-    'payment_type' => 'To\'lov turi',
-    'policy_id' => $policy_id,
-    'data' => $data,
-];
+        $orders = [
+            'product_id' => 'osago',
+            'amount' => 400,
+            'state' => 2,
+            'payment_type' => 'To\'lov turi',
+            'policy_id' => $policy_id,
+            'data' => $data,
+        ];
 
-$order = Order::create($orders);
+        $order = Order::create($orders);
 
         // Buyurtma muvaffaqiyatli yaratilgan
         // Qo'shimcha kodlar...
